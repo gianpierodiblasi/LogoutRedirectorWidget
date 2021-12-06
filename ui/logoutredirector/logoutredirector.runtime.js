@@ -21,7 +21,7 @@ TW.Runtime.Widgets.logoutredirector = function () {
 
       if (debugMode) {
         console.log("LogoutRedirector - execute -> Start");
-        console.log("LogoutRedirector - evaluate -> url = " + url);
+        console.log("LogoutRedirector - execute -> url = " + url);
       }
 
       var logoutInvoker = new ThingworxInvoker({
