@@ -24,6 +24,8 @@ TW.Runtime.Widgets.logoutredirector = function () {
         console.log("LogoutRedirector - execute -> url = " + url);
       }
 
+      var iemode = TW.Environment.queryIEMode();
+
       var logoutInvoker = new ThingworxInvoker({
         entityType: "Server",
         entityName: "*",
@@ -33,7 +35,7 @@ TW.Runtime.Widgets.logoutredirector = function () {
       });
 
       logoutInvoker.invokeService(function () {
-        if (TW.Environment.queryIEMode()) {
+        if (iemode) {
           document.execCommand("ClearAuthenticationCache");
         }
         window.location = url;
